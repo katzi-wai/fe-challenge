@@ -30,14 +30,13 @@ const DatabaseTest = (): React.ReactElement => {
       setTestPlayer(player)
 
       // Start a game to record some data
-      const game = await window.api.startGame(player.player_id.toString(), 100)
+      const game = await window.api.startGame(player.player_id, 100)
 
       // Record a test spin
-      await window.api.recordSpin(game.game_id.toString(), ['🍒', '🍋', '🍊'], 10, 15)
+      await window.api.recordSpin(game.gameId, "🍒, 🍋, 🍊", 10, 15)
 
-      // End the game
-      await window.api.endGame(game.game_id.toString(), 105)
-
+      // // End the game
+      await window.api.endGame(game.gameId, 105)
       setMessage(
         `Test complete: Added player ${player.name} (ID: ${player.player_id}) and recorded test data`
       )

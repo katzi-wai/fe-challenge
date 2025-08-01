@@ -1,0 +1,119 @@
+/* SlotReel.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #222;
+  color: white;
+}
+
+.slot-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.reels {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.reel {
+  font-size: 4rem;
+  background: #444;
+  padding: 1rem 2rem;
+  margin: 0 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Make buttons scale and adjust spacing */
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  background: gold;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: orange;
+}
+
+button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+.message {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 450px) {
+  .reel {
+    font-size: 3rem;
+    padding: 0.75rem 1rem;
+    min-width: 60px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .slot-container {
+    padding: 1rem;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+}
+
+/* Spinning animation on reels */
+.spinning .reel {
+  animation: spinEffect 0.8s ease-in-out;
+}
+
+@keyframes spinEffect {
+  0% {
+    transform: translateY(-20px) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotateX(360deg);
+  }
+  100% {
+    transform: translateY(0) rotateX(720deg);
+  }
+}
+
+/* Flash animation for wins */
+.reel.win {
+  animation: winFlash 0.4s ease-in-out 2;
+  box-shadow: 0 0 20px yellow;
+}
+
+@keyframes winFlash {
+  0% {
+    transform: scale(1);
+    background: #444;
+  }
+  50% {
+    transform: scale(1.1);
+    background: #ffd700;
+  }
+  100% {
+    transform: scale(1);
+    background: #444;
+  }
+}

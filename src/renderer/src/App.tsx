@@ -1,6 +1,7 @@
 import Versions from './components/Versions'
 import electronLogo from './assets/electron.svg'
 import DatabaseTest from './DatabaseTest'
+import SlotMachine from './Slotmachine'
 
 function App(): JSX.Element {
   return (
@@ -8,6 +9,7 @@ function App(): JSX.Element {
       <img alt="logo" className="logo" src={electronLogo} />
       <div className="creator">Powered by electron-vite</div>
       <DatabaseTest />
+      <SlotMachine />
       <Versions></Versions>
     </>
   )

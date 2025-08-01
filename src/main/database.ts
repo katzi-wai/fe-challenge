@@ -122,6 +122,9 @@ export function setupIpcHandlers(): void {
   ipcMain.handle(
     'record-spin',
     (_, gameId: number, symbols: string, betAmount: number, winAmount: number) => {
+      if (!gameId || typeof gameId !== 'number') {
+        throw new Error("Invalid or missing gameId "+ JSON.stringify(gameId));
+      }
       const result = getDatabase()
         .prepare(
           `

@@ -24,7 +24,8 @@
     "@electron-toolkit/preload": "^3.0.1",
     "@electron-toolkit/utils": "^4.0.0",
     "better-sqlite3": "^11.9.1",
-    "electron-store": "^10.0.1"
+    "electron-store": "^10.0.1",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
